@@ -1,0 +1,42 @@
+import images from "./images";
+import texts from "./texts";
+
+const pages = [
+  { image: images.Page1, texts: texts.Page1 },
+  { image: images.Page2, texts: texts.Page2 },
+  { image: images.Page3, texts: texts.Page3 },
+  { image: images.Page4, texts: texts.Page4 },
+  { image: images.Page5, texts: texts.Page5 },
+  { image: images.Page6, texts: texts.Page6 },
+  { image: images.Page7, texts: texts.Page7 },
+  { image: images.Page8, texts: texts.Page8 },
+  { image: images.Page9, texts: texts.Page9 },
+  { image: images.Page10, texts: texts.Page10 },
+  { image: images.Page11, texts: texts.Page11 },
+  { image: images.Page12, texts: '' },
+  { image: images.Page13, texts: texts.Page13 },
+  { image: images.Page14, texts: texts.Page14 },
+  { image: images.Page15, texts: texts.Page15 },
+  { image: images.Page16, texts: texts.Page16 },
+  { image: images.Page17, texts: texts.Page17 },
+  { image: images.Page18, texts: texts.Page18 },
+  { image: images.Page19, texts: texts.Page19 },
+  { image: images.Page20, texts: texts.Page20 },
+  { image: images.Page21, texts: texts.Page21 },
+  { image: images.Page22, texts: texts.Page22 },
+  { image: images.Page23, texts: texts.Page23 },
+  { image: images.Page24, texts: texts.Page24 },
+  { image: images.Page25, texts: texts.Page25 },
+  { image: images.Page26, texts: texts.Page26 },
+  { image: images.Page27, texts: texts.Page27 },
+  { image: images.Page28, texts: texts.Page28 },
+  { image: images.Page29, texts: texts.Page29 },
+  { image: images.Page30, texts: texts.Page30 },
+  { image: images.Page31, texts: texts.Page31 },
+  { image: images.Page32, texts: texts.Page32 },
+  { image: images.Page33, texts: texts.Page33 },
+  { image: images.Page34, texts: texts.Page34 },
+  { image: images.Page35, texts: texts.Page35 },
+];
+
+export default pages;

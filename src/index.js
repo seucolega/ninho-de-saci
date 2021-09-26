@@ -1,12 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { ThemeProvider } from 'styled-components';
+import ReactFavicon from 'react-favicon';
+
 import reportWebVitals from './reportWebVitals';
+
+import App from './App';
+import GlobalStyle from './styles/GlobalStyle';
+import theme from './styles/theme';
+import media from './assets/media';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ReactFavicon url={ media.favIcon } />
+    <GlobalStyle />
+    <ThemeProvider theme={ theme }>
+      <App />
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

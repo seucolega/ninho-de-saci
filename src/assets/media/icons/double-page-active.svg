@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="68.893333mm"
+   height="43.283001mm"
+   viewBox="0 0 68.893333 43.283001"
+   version="1.1"
+   id="svg44187"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="pagina-dupla-w.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview44189"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="0.32"
+     inkscape:cx="-29.6875"
+     inkscape:cy="146.875"
+     inkscape:window-width="1366"
+     inkscape:window-height="691"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs44184" />
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-80.481728,-139.589)">
+    <g
+       id="g44170"
+       transform="matrix(1.8734516,0,0,1.841011,74.4028,138.2177)"
+       style="fill:#ffffff;fill-opacity:1;stroke-width:0.142467"
+       inkscape:export-filename="/sysroot/home/celia/Documentos/Job/Ninho de saci/layout/pagina-dupla.png"
+       inkscape:export-xdpi="100.0038"
+       inkscape:export-ydpi="100.0038">
+      <rect
+         id="rect44160"
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.247451"
+         rx="1"
+         ry="1"
+         height="23.263"
+         width="18.263"
+         y="0.86859"
+         x="3.3685" />
+      <path
+         id="path44162"
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.169392;stroke-linecap:round"
+         inkscape:connector-curvature="0"
+         d="m 7.4024,6.5001 h 10.195" />
+      <path
+         id="path44164"
+         d="m 7.4024,10.5 h 10.195"
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.169392;stroke-linecap:round"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path44166"
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.169392;stroke-linecap:round"
+         inkscape:connector-curvature="0"
+         d="m 7.4024,14.5 h 10.195" />
+      <path
+         id="path44168"
+         d="m 7.4024,18.5 h 10.195"
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.169392;stroke-linecap:round"
+         inkscape:connector-curvature="0" />
+    </g>
+    <g
+       id="g44182"
+       transform="matrix(1.8734516,0,0,1.841011,108.6177,138.2177)"
+       style="fill:#ffffff;fill-opacity:1;stroke-width:0.142467"
+       inkscape:export-filename="/sysroot/home/celia/Documentos/Job/Ninho de saci/layout/pagina-dupla.png"
+       inkscape:export-xdpi="100.0038"
+       inkscape:export-ydpi="100.0038">
+      <rect
+         id="rect44172"
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.247451"
+         rx="1"
+         ry="1"
+         height="23.263"
+         width="18.263"
+         y="0.86859"
+         x="3.3685" />
+      <path
+         id="path44174"
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.169392;stroke-linecap:round"
+         inkscape:connector-curvature="0"
+         d="m 7.4024,6.5001 h 10.195" />
+      <path
+         id="path44176"
+         d="m 7.4024,10.5 h 10.195"
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.169392;stroke-linecap:round"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path44178"
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.169392;stroke-linecap:round"
+         inkscape:connector-curvature="0"
+         d="m 7.4024,14.5 h 10.195" />
+      <path
+         id="path44180"
+         d="m 7.4024,18.5 h 10.195"
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.169392;stroke-linecap:round"
+         inkscape:connector-curvature="0" />
+    </g>
+  </g>
+</svg>
