@@ -4,15 +4,17 @@ import media from '../../assets/media';
 import { Button, Main } from '../../components/atoms';
 import { usePageSelectionActionContext } from '../../context/contexts';
 import { getThemeColor } from '../../styles/utils';
+import { homeContent } from '../../utils/data';
 import { READER } from '../../utils/pageTypes';
 
 const Home = ({ className }) => {
   const setSelectedPage = usePageSelectionActionContext();
+  const { buttonText } = homeContent;
 
   return (
     <Main className={ className }>
       <Button onClick={ () => setSelectedPage(READER) }>
-        Quero ler o livro!
+        { buttonText }
       </Button>
     </Main>
   );

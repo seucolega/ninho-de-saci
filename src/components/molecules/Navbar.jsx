@@ -1,32 +1,33 @@
 import React from 'react';
 import styled from 'styled-components';
-import media from '../../assets/media';
 import {
   useAboutActionContext,
   usePageSelectionActionContext,
 } from '../../context/contexts';
+import { navbarContent } from '../../utils/data';
 import { HOME, READER } from '../../utils/pageTypes';
 import { Nav, NavGroup, NavItem} from '../atoms';
 
 const Navbar = ({ className }) => {
   const toggleShowAbout = useAboutActionContext();
   const setSelectedPage = usePageSelectionActionContext();
+  const { home, about, bookReader, bookPdf } = navbarContent;
 
   return (
     <Nav className={ className }>
       <NavGroup>
         <NavItem onClick={ () => setSelectedPage(HOME) }>
-          Início
+          { home }
         </NavItem>
         <NavItem onClick={ toggleShowAbout }>
-          Sobre
+          { about }
         </NavItem>
         <NavItem onClick={ () => setSelectedPage(READER) }>
-          Leia o livro digital
+          { bookReader }
         </NavItem>
         <NavItem>
-          <a href={ media.pdf } download>
-            Livro em PDF
+          <a href={ bookPdf.url } download>
+            { bookPdf.text }
           </a>
         </NavItem>
       </NavGroup>

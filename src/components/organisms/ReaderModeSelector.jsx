@@ -1,22 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 import media from '../../assets/media';
-import { useReaderSelectorActionContext, useReaderSelectorDataContext } from '../../context/contexts';
+import { useReaderModeActionContext, useReaderModeDataContext } from '../../context/contexts';
 import { Container } from '../atoms';
-import ReaderPageSelectorIcon from '../molecules/ReaderPageSelectorIcon';
+import ReaderModeSelectorIcon from '../molecules/ReaderModeSelectorIcon';
 
-const ReaderPageSelector = ({ className }) => {
-  const isSinglePage = useReaderSelectorDataContext();
-  const setSinglePage = useReaderSelectorActionContext();
+const ReaderModeSelector = ({ className }) => {
+  const setSinglePage = useReaderModeActionContext();
+  const [isSinglePage] = useReaderModeDataContext();
 
   return (
     <Container className={ className }>
-      <ReaderPageSelectorIcon
+      <ReaderModeSelectorIcon
         onClick={ () => setSinglePage(true) }
         iconObject={ media.icons.singlePage }
         active={ isSinglePage }
       />
-      <ReaderPageSelectorIcon
+      <ReaderModeSelectorIcon
         onClick={ () => setSinglePage(false) }
         iconObject={ media.icons.doublePage }
         active={ !isSinglePage }
@@ -25,4 +25,4 @@ const ReaderPageSelector = ({ className }) => {
   );
 };
 
-export default styled(ReaderPageSelector)``;
+export default styled(ReaderModeSelector)``;

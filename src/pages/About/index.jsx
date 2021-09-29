@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { Button, Container, SectionHeader, Text, Wrapper } from '../../components/atoms';
 import { useAboutActionContext } from '../../context/contexts';
 import { getThemeColor } from '../../styles/utils';
+import { aboutContent } from '../../utils/data';
+import generateKey from '../../utils/uniqueKeyGenerator';
 
 const BoxWrapper = styled(Wrapper)``;
 const TextWrapper = styled(Wrapper)``;
@@ -10,27 +12,17 @@ const HeaderWrapper = styled(Wrapper)``;
 
 const About = ({ className }) => {
   const toggleShowAbout = useAboutActionContext();
+  const text = aboutContent.text.split('\n');
 
   return (
     <Container className={ className }>
       <BoxWrapper>
         <HeaderWrapper>
-          <SectionHeader>Sobre o Livro</SectionHeader>
+          <SectionHeader>{ aboutContent.title }</SectionHeader>
           <Button onClick={ toggleShowAbout }>X</Button>
         </HeaderWrapper>
         <TextWrapper>
-          <Text>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus at, voluptate, debitis rerum laudantium ducimus iusto illo quasi distinctio neque nesciunt porro? Praesentium earum molestiae minus quisquam commodi sint distinctio!
-          </Text>
-          <Text>
-            Odit magni deleniti iste cupiditate quae. Tempora voluptate pariatur libero tenetur numquam quam exercitationem magni neque porro eveniet ex, saepe odit dolorem sunt sequi amet quo quidem facilis fugiat ipsa.
-          </Text>
-          <Text>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus at, voluptate, debitis rerum laudantium ducimus iusto illo quasi distinctio neque nesciunt porro? Praesentium earum molestiae minus quisquam commodi sint distinctio!
-          </Text>
-          <Text>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus at, voluptate, debitis rerum laudantium ducimus iusto illo quasi distinctio neque nesciunt porro? Praesentium earum molestiae minus quisquam commodi sint distinctio!
-          </Text>
+          { text.map((paragraph) => <Text key={ generateKey() }>{ paragraph }</Text>) }
         </TextWrapper>
       </BoxWrapper>
     </Container>

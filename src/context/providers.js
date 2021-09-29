@@ -3,8 +3,10 @@ import {
   AboutActionContext,
   PageSelectionDataContext,
   PageSelectionActionContext,
-  ReaderSelectorDataContext,
-  ReaderSelectorActionContext,
+  ReaderModeDataContext,
+  ReaderModeActionContext,
+  ReaderProgressDataContext,
+  ReaderProgressActionContext,
 } from './contexts';
 import providerFactory from './utils/providerFactory';
 
@@ -18,7 +20,12 @@ export const PageSelectionProvider = providerFactory(
   PageSelectionActionContext,
 );
 
-export const ReaderSelectorProvider = providerFactory(
-  ReaderSelectorDataContext,
-  ReaderSelectorActionContext,
+export const ReaderModeProvider = providerFactory(
+  ReaderModeDataContext,
+  ReaderModeActionContext,
+);
+
+export const ReaderProgressProvider = providerFactory(
+  ReaderProgressDataContext,
+  ReaderProgressActionContext,
 );

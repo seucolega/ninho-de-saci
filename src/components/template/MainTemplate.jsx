@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useAboutDataContext } from '../../context/contexts';
 import About from '../../pages/About';
 import { getThemeColor } from '../../styles/utils';
-import { Container, Header} from '../atoms';
+import { Container } from '../atoms';
 import Menu from '../organisms/Menu';
 import SelectedPage from '../organisms/SelectedPage';
 

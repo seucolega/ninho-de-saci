@@ -1,14 +1,44 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import media from "../assets/media";
 import { useReaderSelectorDataContext } from "../context/contexts";
+import { getPages, PAGES_LENGTH } from "../utils/pages";
 
 const usePageReader = () => {
   const isSinglePage = useReaderSelectorDataContext();
   const [currentIndex, setCurrentIndex] = useState(() => 0);
+  const [browseDirection, setBrowseDirection] = useState(() => 0);
+  
   const lastIndex = useRef(currentIndex);
   const isLastOfPair = currentIndex % 2 !== 0
 
-  const pagesAmount = useMemo(
+  const pagesAmount = useMemo(() => isSinglePage ? 1 : 2, [isSinglePage]);
+
+  const pages = getPages({ index: currentIndex, isSinglePage });
+
+  const nextPages = useMemo(
+    () => {
+      const initialIndex = currentIndex + (browseDirection * pagesAmount);
+      return getPages({ index: initialIndex, isSinglePage });
+    },
+    [browseDirection],
+  );
+
+  const setNextPage = useCallback(
+    () => {
+      console.log('currentIndex', currentIndex);
+      return browseDirection < 0
+        ? () => setCurrentIndex((curr) => {
+            const previousIndex = curr - pagesAmount;
+            return previousIndex < 0 ? 0 : previousIndex;
+          })
+        : () => setCurrentIndex((curr) => {
+            const nextIndex = curr + pagesAmount;
+            return nextIndex > PAGES_LENGTH - 1 ? 0 : nextIndex
+          });
+    },
+    [browseDirection],
+  );
+
+  useEffect(
     () => {
       const isTogglingDoubleAtLastOfPair = !isSinglePage && isLastOfPair;
       const isLastOfPairRecorded = lastIndex.current === currentIndex + 1;
@@ -21,31 +51,9 @@ const usePageReader = () => {
       if (mustReturnToLastOfPair) {
         setCurrentIndex(lastIndex.current);
       }
-
-      return isSinglePage ? 1 : 2;
-    }, [isSinglePage]
+    },
+    [isSinglePage],
   );
-
-  const pages = useMemo(
-    () => media.pages.slice(currentIndex, currentIndex + pagesAmount),
-    [pagesAmount, currentIndex],
-  );
-
-  const goToNextPage = useCallback(
-    () => setCurrentIndex((curr) => {
-      const nextIndex = curr + pagesAmount;
-      return nextIndex > media.pages.length - 1 ? 0 : nextIndex;
-    }),
-    [pagesAmount],
-  )
-
-  const goToPreviousPage = useCallback(
-    () => setCurrentIndex((curr) => {
-      const previousIndex = curr - pagesAmount;
-      return previousIndex < 0 ? 0 : previousIndex;
-    }),
-    [pagesAmount],
-  )
 
   useEffect(
     () => {
@@ -59,15 +67,15 @@ const usePageReader = () => {
     [currentIndex],
   );
 
-  console.log(currentIndex);
-
   return {
     pagesAmount,
     pages,
-    goToNextPage,
-    goToPreviousPage,
     currentIndex,
-    isAtLastPage: currentIndex >= media.pages.length - 1,
+    browseDirection,
+    setBrowseDirection,
+    nextPages,
+    setNextPage,
+    isAtLastPage: currentIndex >= PAGES_LENGTH - 1,
     isAtFirstPage: currentIndex === 0,
   };
 };

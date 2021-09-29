@@ -1,37 +1,22 @@
-import React from 'react';
-import styled, { css } from 'styled-components';
-import { useReaderSelectorDataContext } from '../../context/contexts';
-import usePageReader from '../../hooks/usePageReader';
+import React, { useState } from 'react';
+import styled from 'styled-components';
 import { getThemeColor } from '../../styles/utils';
 import { Button, Container } from '../atoms';
-import PageBoard from '../molecules/PageBoard';
-import ReaderPageSelector from '../organisms/ReaderPageSelector';
-
-const PageNavButton = styled(Button)`
-  ${props => props.marginRight && css`margin-right: 1%;`}
-`;
+import PageNavButton from '../atoms/PageNavButton';
+import PagesContainer from '../molecules/PagesContainer';
+import ReaderModeSelector from '../organisms/ReaderModeSelector';
 
 const PageReaderTemplate = ({ className }) => {
-  const {
-    pages,
-    goToNextPage,
-    goToPreviousPage,
-    isAtLastPage,
-    isAtFirstPage,
-  } = usePageReader();
-
-  const isSinglePage = useReaderSelectorDataContext();
+  const [browseDirection, setBrowseDirection] = useState(() => 0);
 
   return (
     <Container className={ className }>
-      <PageBoard pages={ pages } isSinglePage={ isSinglePage || isAtLastPage } />
-      { isAtLastPage || <ReaderPageSelector /> }
-      { isAtFirstPage
-        || <PageNavButton onClick={ () => goToPreviousPage() }>{'<'}</PageNavButton> }
-      <PageNavButton onClick={ () => goToNextPage() } marginRight={ isSinglePage }>
-      {/* <PageNavButton onClick={ () => goToNextPage() }> */}
-        { isAtLastPage ? '↻': '>' }
-      </PageNavButton>
+      <PagesContainer browseDirection={ browseDirection } setBrowseDirection={ setBrowseDirection } />
+      {/* { isAtLastPage || <ReaderModeSelector /> } */}
+      <ReaderModeSelector />
+      {/* { isAtFirstPage || <PageNavButton content={'<'} onClick={ () => setBrowseDirection(-1) } /> } */}
+      <PageNavButton previous onClick={ () => setBrowseDirection(-1) } />
+      <PageNavButton next onClick={ () => setBrowseDirection(1) } />
     </Container>
   );
 };
@@ -40,6 +25,11 @@ export default styled(PageReaderTemplate)`
   position: relative;
   max-width: 100vw;
   height: 100%;
+
+  ${PagesContainer} {
+    display: flex;
+    align-items: center;
+  }
 
   ${Button} {
     width: 5%;
@@ -59,7 +49,7 @@ export default styled(PageReaderTemplate)`
     }
   }
 
-  ${ReaderPageSelector} {
+  ${ReaderModeSelector} {
     background-color: ${getThemeColor('primary')};
     box-shadow: 5px 5px ${getThemeColor('secondary')};
     position: absolute;
@@ -71,9 +61,5 @@ export default styled(PageReaderTemplate)`
     justify-content: space-evenly;
     padding: 5px;
     z-index: 33;
-  }
-
-  ${PageBoard} {
-    width: 100%;
   }
 `;

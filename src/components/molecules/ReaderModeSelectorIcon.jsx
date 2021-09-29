@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Image } from '../atoms';
 
-const ReaderPageSelectorIcon = ({ className, active, iconObject, onClick }) => {
+const ReaderModeSelectorIcon = ({ className, active, iconObject, onClick }) => {
   const iconKey = active ? 'active' : 'inactive';
   
   return (
@@ -15,4 +15,4 @@ const ReaderPageSelectorIcon = ({ className, active, iconObject, onClick }) => {
   );
 };
 
-export default styled(ReaderPageSelectorIcon)``;
+export default styled(ReaderModeSelectorIcon)``;
