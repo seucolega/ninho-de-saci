@@ -16,9 +16,10 @@ const PageFrame = ({ pages, isNext }, ref) => {
 
   return (
     <PageContainer ref={ ref }>
-      { pages.map((page) => (
+      { pages.map((page, index) => (
         <PageItem
           key={ generateKey() }
+          index={ index }
           isSinglePage={ isSinglePage }
           page={ page }
           isNext={ isNext }

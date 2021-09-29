@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { getThemeColor } from '../../styles/utils';
 import { Button, Container } from '../atoms';
 import PageNavButton from '../atoms/PageNavButton';
-import PagesContainer from '../molecules/PagesContainer';
+import PagesContainer from '../organisms/PagesContainer';
 import ReaderModeSelector from '../organisms/ReaderModeSelector';
 
 const PageReaderTemplate = ({ className }) => {
@@ -12,9 +12,7 @@ const PageReaderTemplate = ({ className }) => {
   return (
     <Container className={ className }>
       <PagesContainer browseDirection={ browseDirection } setBrowseDirection={ setBrowseDirection } />
-      {/* { isAtLastPage || <ReaderModeSelector /> } */}
       <ReaderModeSelector />
-      {/* { isAtFirstPage || <PageNavButton content={'<'} onClick={ () => setBrowseDirection(-1) } /> } */}
       <PageNavButton previous onClick={ () => setBrowseDirection(-1) } />
       <PageNavButton next onClick={ () => setBrowseDirection(1) } />
     </Container>

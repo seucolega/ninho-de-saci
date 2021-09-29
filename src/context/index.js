@@ -6,6 +6,7 @@ import {
   PageSelectionProvider,
   ReaderModeProvider,
   ReaderProgressProvider,
+  SoundModeProvider,
 } from './providers';
 
 import useToggle from '../hooks/useToggle';
@@ -17,6 +18,7 @@ const AppContextProvider = ({ children }) => {
   const [isSinglePage, setSinglePage] = useState(() => true);
   const [[isAtFirstPage, isAtLastPage], setReaderProgress] = useState(() => [true, false]);
   const pagesAmount = useMemo(() => isSinglePage ? 1 : 2, [isSinglePage]);
+  const [activeSound, toggleActiveSound] = useToggle(false);
 
   const aboutValues = useMemo(
     () => valuesFactory(showAbout, toggleShowAbout),
@@ -34,13 +36,19 @@ const AppContextProvider = ({ children }) => {
     () => valuesFactory([isAtFirstPage, isAtLastPage], setReaderProgress),
     [isAtFirstPage, isAtLastPage],
   );
+  const soundModeValues = useMemo(
+    () => valuesFactory(activeSound, toggleActiveSound),
+    [activeSound],
+  );
 
   return (
     <AboutProvider { ...aboutValues }>
       <PageSelectionProvider {...pageSelectionValues}>
         <ReaderModeProvider {...readerModeValues}>
           <ReaderProgressProvider {...readerProgressValues}>
-            { children }
+            <SoundModeProvider {...soundModeValues}>
+              { children }
+            </SoundModeProvider>
           </ReaderProgressProvider>
         </ReaderModeProvider>
       </PageSelectionProvider>

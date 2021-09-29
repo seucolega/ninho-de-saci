@@ -20,18 +20,16 @@ const PagesContainer = ({ className, browseDirection, setBrowseDirection }) => {
   const currentPage = useRef(null);
   const nextPage = useRef(null);
 
-  const onComplete = () => {
-    setBrowseDirection(0);
-    setNextIndex();
-  };
-
   useLayoutEffect(
     () => {
       const animationParams = {
         current: currentPage.current,
         next: nextPage.current,
         direction: browseDirection,
-        onComplete,
+        onComplete() {
+          setBrowseDirection(0);
+          setNextIndex();
+        },
       };
 
       const tl = setAnimation(animationParams);

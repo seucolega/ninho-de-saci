@@ -6,7 +6,7 @@ import {
 } from '../../context/contexts';
 import { navbarContent } from '../../utils/data';
 import { HOME, READER } from '../../utils/pageTypes';
-import { Nav, NavGroup, NavItem} from '../atoms';
+import { Nav, NavGroup, NavItem } from '../atoms';
 
 const Navbar = ({ className }) => {
   const toggleShowAbout = useAboutActionContext();

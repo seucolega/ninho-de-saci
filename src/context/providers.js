@@ -7,6 +7,8 @@ import {
   ReaderModeActionContext,
   ReaderProgressDataContext,
   ReaderProgressActionContext,
+  SoundModeDataContext,
+  SoundModeActionContext,
 } from './contexts';
 import providerFactory from './utils/providerFactory';
 
@@ -28,4 +30,9 @@ export const ReaderModeProvider = providerFactory(
 export const ReaderProgressProvider = providerFactory(
   ReaderProgressDataContext,
   ReaderProgressActionContext,
+);
+
+export const SoundModeProvider = providerFactory(
+  SoundModeDataContext,
+  SoundModeActionContext,
 );
