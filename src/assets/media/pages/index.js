@@ -3,8 +3,8 @@ import texts from "./texts";
 import audios from "../audio";
 
 const pages = [
-  { image: images.Page1, texts: texts.Page1, audio: { file: audios.audio1, time: [4.0, 7.8] } },
-  { image: images.Page2, texts: texts.Page2, audio: { file: audios.audio1, time: [7.8, 14.0] } },
+  { image: images.Page1, texts: texts.Page1, audio: { file: audios.audio1, time: [4.5, 8.3] } },
+  { image: images.Page2, texts: texts.Page2, audio: { file: audios.audio1, time: [8.3, 14.0] } },
   { image: images.Page3, texts: texts.Page3, audio: { file: audios.audio2, time: [2.5, 4.5] } },
   { image: images.Page4, texts: texts.Page4, audio: { file: audios.audio2, time: [4.5, 10.0] } },
   { image: images.Page5, texts: texts.Page5, audio: { file: audios.audio3, time: [2.5, 6.7] } },
