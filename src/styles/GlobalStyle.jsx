@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 export default createGlobalStyle`
   html, body {
     font-weight: 400;
-    overflow-x: hidden;
+    overflow: hidden;
   }
 
   *, *:before, *:after {
