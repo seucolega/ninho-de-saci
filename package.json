@@ -1,6 +1,6 @@
 {
-  "name": "ninho-reboot",
-  "version": "0.1.0",
+  "name": "ninho-de-saci",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
