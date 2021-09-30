@@ -63,6 +63,8 @@ const PageItem = ({ isSinglePage, page, isNext, index }) => {
             playing={ shouldPlayAudio }
             onProgress={ stopOnEndTime }
             progressInterval={ isSinglePage && 100 }
+            width={ 0 }
+            height={ 0 }
           />) }
       <Image src={ page.image }/>
       { isNext || <Image ref={ text } src={ page.texts }/> }

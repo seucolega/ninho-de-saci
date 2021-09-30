@@ -7,7 +7,13 @@ import setAnimation from '../../utils/setAnimation';
 import { Container } from '../atoms';
 import PagesFrame from './PagesFrame';
 
-const PagesContainer = ({ className, browseDirection, setBrowseDirection }) => {
+const InnerContainer = styled(Container)`
+  display: flex;
+  width: 400vw;
+  height: 100%;
+`;
+
+const PagesContainer = ({ className, browseDirection, setBrowseDirection }, ref) => {
   const [isSinglePage, pagesAmount] = useReaderModeDataContext();
   const [currentIndex, setNextIndex] = useCurrentPage(browseDirection);
   
@@ -44,15 +50,11 @@ const PagesContainer = ({ className, browseDirection, setBrowseDirection }) => {
   );
 
   return (
-    <Container className={ className }>
+    <InnerContainer ref={ ref } className={ className }>
       <PagesFrame pages={ pages } ref={ currentPage } />
       { !!browseDirection && <PagesFrame pages={ nextPages } ref={ nextPage } isNext /> }
-    </Container>
+    </InnerContainer>
   );
 };
 
-export default styled(PagesContainer)`
-  display: flex;
-  width: 400vw;
-  height: 100%;
-`;
+export default React.forwardRef(PagesContainer);

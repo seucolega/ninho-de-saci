@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import gsap from 'gsap';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { getThemeColor } from '../../styles/utils';
 import { Button, Container } from '../atoms';
@@ -8,10 +9,26 @@ import ReaderModeSelector from '../organisms/ReaderModeSelector';
 
 const PageReaderTemplate = ({ className }) => {
   const [browseDirection, setBrowseDirection] = useState(() => 0);
+  const container = useRef();
+
+  useLayoutEffect(
+    () => {;
+      gsap.fromTo(
+        container.current,
+        { xPercent: 100 },
+        { xPercent: 0, duration: 1 },
+      );
+    },
+    [],
+  );
 
   return (
     <Container className={ className }>
-      <PagesContainer browseDirection={ browseDirection } setBrowseDirection={ setBrowseDirection } />
+      <PagesContainer
+        ref={ container }
+        browseDirection={ browseDirection }
+        setBrowseDirection={ setBrowseDirection }
+      />
       <ReaderModeSelector />
       <PageNavButton previous onClick={ () => setBrowseDirection(-1) } />
       <PageNavButton next onClick={ () => setBrowseDirection(1) } />
