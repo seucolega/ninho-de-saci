@@ -1,21 +1,19 @@
-import gsap from 'gsap/all';
 import React, { useLayoutEffect, useRef } from 'react';
-import ReactPlayer from 'react-player';
+import gsap from 'gsap/all';
 import styled from 'styled-components';
-import media from '../../assets/media';
-import audios from '../../assets/media/audio';
+
 import { Button, Main } from '../../components/atoms';
-import {
-  usePageSelectionActionContext,
-  useSoundModeDataContext
-} from '../../context/contexts';
+import { usePageSelectionActionContext } from '../../context/contexts';
+import useToggle from '../../hooks/useToggle';
+
 import { getThemeColor } from '../../styles/utils';
 import { homeContent } from '../../utils/data';
 import { READER } from '../../utils/pageTypes';
+import media from '../../assets/media';
 
 const Home = ({ className }) => {
   const setSelectedPage = usePageSelectionActionContext();
-  const activeSound = useSoundModeDataContext();
+  const [showButton, toggleShowButton] = useToggle(false);
 
   const { buttonText } = homeContent;
   const main = useRef(null);
@@ -25,18 +23,27 @@ const Home = ({ className }) => {
       gsap.fromTo(
         main.current,
         { autoAlpha: 0, scale: 1.2 },
-        { autoAlpha: 1, duration: 3, scale: 1 },
+        { autoAlpha: 1, duration: 2, scale: 1, onComplete: toggleShowButton },
       );
     },
     [],
   );
 
+  const goToReaderPage = () => {
+    gsap.to(
+      main.current,
+      {
+        xPercent: -100,
+        duration: 1,
+        autoAlpha: 0,
+        onComplete: () => setSelectedPage(READER),
+      },
+    );
+  };
+
   return (
     <Main ref={ main } className={ className }>
-      { activeSound && <ReactPlayer url={ audios.audioAbertura } playing={ true }/> }
-      <Button onClick={ () => setSelectedPage(READER) }>
-        { buttonText }
-      </Button>
+      { showButton && <Button onMouseUp={ goToReaderPage }>{ buttonText }</Button> }
     </Main>
   );
 };
@@ -48,12 +55,11 @@ export default styled(Home)`
   background-repeat: no-repeat;
   background-size: contain;
   display: grid;
-  height: 100vh;
+  height: 100%;
   padding: 0 0 7% 0;
   place-items: end center;
   position: absolute;
   width: 100%;
-  z-index: -1;
 
   ${Button} {
     background-color: ${getThemeColor('primary')};
@@ -61,12 +67,13 @@ export default styled(Home)`
     box-shadow: 4px 4px ${getThemeColor('secondary')};
     color: white;
     cursor: pointer;
-    font-size: 1.8rem;
-    padding: 2rem;
-    text-transform: uppercase;
-    height: 2.5rem;
     display: flex;
+    font-size: 1.8rem;
+    height: 2.5rem;
+    padding: 2rem;
     place-items: center;
+    text-transform: uppercase;
+    z-index: 2;
 
     :active {
       background-color: ${getThemeColor('primaryTransparent')};
