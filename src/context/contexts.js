@@ -10,6 +10,8 @@ export const ReaderProgressDataContext = createContext();
 export const ReaderProgressActionContext = createContext();
 export const SoundModeDataContext = createContext();
 export const SoundModeActionContext = createContext();
+export const MenuDataContext = createContext();
+export const MenuActionContext = createContext();
 
 export const useAboutDataContext = () => useContext(AboutDataContext);
 export const useAboutActionContext = () => useContext(AboutActionContext);
@@ -21,3 +23,5 @@ export const useReaderProgressDataContext = () => useContext(ReaderProgressDataC
 export const useReaderProgressActionContext = () => useContext(ReaderProgressActionContext);
 export const useSoundModeDataContext = () => useContext(SoundModeDataContext);
 export const useSoundModeActionContext = () => useContext(SoundModeActionContext);
+export const useMenuDataContext = () => useContext(MenuDataContext);
+export const useMenuActionContext = () => useContext(MenuActionContext);

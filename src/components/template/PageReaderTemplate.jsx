@@ -46,6 +46,11 @@ export default styled(PageReaderTemplate)`
     align-items: center;
   }
 
+  @media (max-width: 900px) {
+    width: 100vw;
+    height: 100vh;
+  }
+
   ${Button} {
     width: 5%;
     position: absolute;

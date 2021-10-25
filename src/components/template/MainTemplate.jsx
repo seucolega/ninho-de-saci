@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useAboutDataContext } from '../../context/contexts';
+import { useAboutDataContext, useMenuDataContext } from '../../context/contexts';
 import About from '../../pages/About';
 import { getThemeColor } from '../../styles/utils';
 import { Container } from '../atoms';
@@ -9,10 +9,11 @@ import SelectedPage from '../organisms/SelectedPage';
 
 const MainTemplate = ({ className }) => {
   const showAbout = useAboutDataContext();
+  const showMenu = useMenuDataContext();
   
   return (
     <Container className={ className }>
-      <Menu />
+      <Menu show={ showMenu } />
       <>
         <SelectedPage />
         { showAbout && <About /> }
@@ -29,5 +30,16 @@ export default styled(MainTemplate)`
     background-color: ${getThemeColor('primaryTransparent')};
     width: 100vw;
     z-index: 2;
+  }
+
+  @media (max-width: 900px) {
+    /* display: inline; */
+    width: 100vw;
+    height: 100vh;
+
+    ${Menu} {
+      height: 100vh;
+      z-index: 99;
+    }
   }
 `;

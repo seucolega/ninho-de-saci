@@ -2,31 +2,42 @@ import React from 'react';
 import styled from 'styled-components';
 import {
   useAboutActionContext,
+  useMenuActionContext,
   usePageSelectionActionContext,
 } from '../../context/contexts';
+import useMediaQuery from '../../hooks/useMediaQuery';
 import { navbarContent } from '../../utils/data';
 import { HOME, READER } from '../../utils/pageTypes';
 import { Nav, NavGroup, NavItem } from '../atoms';
 
 const Navbar = ({ className }) => {
   const toggleShowAbout = useAboutActionContext();
+  const isDesktop = useMediaQuery();
+  const toggleShowMenu = useMenuActionContext();
   const setSelectedPage = usePageSelectionActionContext();
   const { home, about, bookReader, bookPdf } = navbarContent;
+
+  const clickNavItem = (callback) => () => {
+    if (!isDesktop) {
+      toggleShowMenu();
+    }
+    callback();
+  };
 
   return (
     <Nav className={ className }>
       <NavGroup>
-        <NavItem onClick={ () => setSelectedPage(HOME) }>
+        <NavItem onClick={ clickNavItem(() => setSelectedPage(HOME)) }>
           { home }
         </NavItem>
-        <NavItem onClick={ toggleShowAbout }>
+        <NavItem onClick={ clickNavItem(toggleShowAbout) }>
           { about }
         </NavItem>
-        <NavItem onClick={ () => setSelectedPage(READER) }>
+        <NavItem onClick={ clickNavItem(() => setSelectedPage(READER)) }>
           { bookReader }
         </NavItem>
         <NavItem>
-          <a href={ bookPdf.url } download>
+          <a href={ bookPdf.url } onClick={ clickNavItem(() => null) } download>
             { bookPdf.text }
           </a>
         </NavItem>
@@ -45,6 +56,13 @@ export default styled(Navbar)`
     display: flex;
     justify-content: space-between;
     width: 50%;
+
+    @media (max-width: 900px) {
+      flex-direction: column;
+      justify-content: center;
+      width: auto;
+    }
+
   }
 
   ${NavItem} {
@@ -73,10 +91,18 @@ export default styled(Navbar)`
     :hover:after {
       transform: scaleX(1);
     }
+
+    @media (max-width: 900px) {
+      text-align: center;
+    }
+
+
   }
 
   a {
     text-decoration-line: none;
     color: white;
   }
+
+
 `;

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import {
   AboutProvider,
+  MenuProvider,
   PageSelectionProvider,
   ReaderModeProvider,
   ReaderProgressProvider,
@@ -11,6 +12,7 @@ import {
 
 import useToggle from '../hooks/useToggle';
 import valuesFactory from './utils/valuesFactory';
+import useMediaQuery from '../hooks/useMediaQuery';
 
 const AppContextProvider = ({ children }) => {
   const [showAbout, toggleShowAbout] = useToggle(false);
@@ -19,6 +21,7 @@ const AppContextProvider = ({ children }) => {
   const [[isAtFirstPage, isAtLastPage], setReaderProgress] = useState(() => [true, false]);
   const pagesAmount = useMemo(() => isSinglePage ? 1 : 2, [isSinglePage]);
   const [activeSound, toggleActiveSound] = useToggle(false);
+  const [showMenu, toggleShowMenu] = useToggle(useMediaQuery());
 
   const aboutValues = useMemo(
     () => valuesFactory(showAbout, toggleShowAbout),
@@ -40,6 +43,10 @@ const AppContextProvider = ({ children }) => {
     () => valuesFactory(activeSound, toggleActiveSound),
     [activeSound],
   );
+  const menuValues = useMemo(
+    () => valuesFactory(showMenu, toggleShowMenu),
+    [showMenu],
+  );
 
   return (
     <AboutProvider { ...aboutValues }>
@@ -47,7 +54,9 @@ const AppContextProvider = ({ children }) => {
         <ReaderModeProvider {...readerModeValues}>
           <ReaderProgressProvider {...readerProgressValues}>
             <SoundModeProvider {...soundModeValues}>
-              { children }
+              <MenuProvider {...menuValues}>
+                { children }
+              </MenuProvider>
             </SoundModeProvider>
           </ReaderProgressProvider>
         </ReaderModeProvider>

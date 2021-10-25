@@ -19,5 +19,14 @@ export default styled(Menu)`
   ${SoundModeSelector} {
     position: absolute;
     right: 100px;
+
+    @media (max-width: 900px) {
+      right: 45%;
+      top: 3%;
+    }
+  }
+
+  @media (max-width: 900px) {
+    display: ${(props) => props.show || 'none'};
   }
 `;

@@ -9,6 +9,8 @@ import {
   ReaderProgressActionContext,
   SoundModeDataContext,
   SoundModeActionContext,
+  MenuDataContext,
+  MenuActionContext,
 } from './contexts';
 import providerFactory from './utils/providerFactory';
 
@@ -35,4 +37,9 @@ export const ReaderProgressProvider = providerFactory(
 export const SoundModeProvider = providerFactory(
   SoundModeDataContext,
   SoundModeActionContext,
+);
+
+export const MenuProvider = providerFactory(
+  MenuDataContext,
+  MenuActionContext,
 );

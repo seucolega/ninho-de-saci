@@ -25,6 +25,16 @@ const PageWrapper = styled(Wrapper)`
     :first-of-type {
       z-index: -3;
     }
+    @media (max-width: 900px) {
+      ${(props) => props.isSinglePage
+        ? css`
+            height: 88vh;
+            width: 100vw;
+            object-fit: contain;
+          `
+        : css`width: 50vw;`
+      }
+    }
   }
 `;
 

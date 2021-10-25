@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="11.692731mm"
+   height="11.692731mm"
+   viewBox="0 0 11.692731 11.692731"
+   version="1.1"
+   id="svg5759"
+   inkscape:version="1.1.1 (eb90963e84, 2021-10-02)"
+   sodipodi:docname="menu-hamburguer.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview5761"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="3.6988215"
+     inkscape:cx="5.1367712"
+     inkscape:cy="38.390606"
+     inkscape:window-width="1366"
+     inkscape:window-height="701"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs5756">
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect5754"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect5748"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect5742"
+       is_visible="true"
+       lpeversion="1" />
+  </defs>
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-180.70855,-115.47155)">
+    <circle
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.99998;stroke-linecap:round"
+       id="circle5736"
+       cx="186.55492"
+       cy="121.31792"
+       r="5.8463655"
+       inkscape:export-filename="/sysroot/home/celia/Documentos/Job/FINCAR/Site/Layout/final/fincar-mobile-home.png"
+       inkscape:export-xdpi="100.004"
+       inkscape:export-ydpi="100.004" />
+    <path
+       style="fill:none;stroke:#3b345e;stroke-width:0.7;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 182.86303,119.85631 h 7.38377"
+       id="path5738"
+       inkscape:path-effect="#path-effect5742"
+       inkscape:original-d="m 182.86303,119.85631 c 2.46139,1.5e-4 4.92264,1.5e-4 7.38377,0"
+       inkscape:export-filename="/sysroot/home/celia/Documentos/Job/FINCAR/Site/Layout/final/fincar-mobile-home.png"
+       inkscape:export-xdpi="100.004"
+       inkscape:export-ydpi="100.004" />
+    <path
+       style="fill:none;stroke:#3b345e;stroke-width:0.7;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 182.86303,121.31792 h 7.38377"
+       id="path5744"
+       inkscape:path-effect="#path-effect5748"
+       inkscape:original-d="m 182.86303,121.31792 c 2.46139,1.4e-4 4.92264,1.4e-4 7.38377,0"
+       inkscape:export-filename="/sysroot/home/celia/Documentos/Job/FINCAR/Site/Layout/final/fincar-mobile-home.png"
+       inkscape:export-xdpi="100.004"
+       inkscape:export-ydpi="100.004" />
+    <path
+       style="fill:none;stroke:#3b345e;stroke-width:0.7;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 182.86303,122.77952 h 7.38377"
+       id="path5750"
+       inkscape:path-effect="#path-effect5754"
+       inkscape:original-d="m 182.86303,122.77952 c 2.46139,1.5e-4 4.92264,1.5e-4 7.38377,0"
+       inkscape:export-filename="/sysroot/home/celia/Documentos/Job/FINCAR/Site/Layout/final/fincar-mobile-home.png"
+       inkscape:export-xdpi="100.004"
+       inkscape:export-ydpi="100.004" />
+  </g>
+</svg>
