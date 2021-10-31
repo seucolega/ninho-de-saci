@@ -17,7 +17,7 @@ import useMediaQuery from '../hooks/useMediaQuery';
 const AppContextProvider = ({ children }) => {
   const [showAbout, toggleShowAbout] = useToggle(false);
   const [selectedPage, setSelectedPage] = useState(() => 'home');
-  const [isSinglePage, setSinglePage] = useState(() => true);
+  const [isSinglePage, setSinglePage] = useState(() => false);
   const [[isAtFirstPage, isAtLastPage], setReaderProgress] = useState(() => [true, false]);
   const pagesAmount = useMemo(() => isSinglePage ? 1 : 2, [isSinglePage]);
   const [activeSound, toggleActiveSound] = useToggle(false);

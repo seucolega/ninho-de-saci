@@ -5,14 +5,13 @@ import { getThemeColor } from '../../styles/utils';
 import { Button, Container } from '../atoms';
 import PageNavButton from '../atoms/PageNavButton';
 import PagesContainer from '../organisms/PagesContainer';
-import ReaderModeSelector from '../organisms/ReaderModeSelector';
 
 const PageReaderTemplate = ({ className }) => {
   const [browseDirection, setBrowseDirection] = useState(() => 0);
   const container = useRef();
 
   useLayoutEffect(
-    () => {;
+    () => {
       gsap.fromTo(
         container.current,
         { xPercent: 100 },
@@ -29,7 +28,6 @@ const PageReaderTemplate = ({ className }) => {
         browseDirection={ browseDirection }
         setBrowseDirection={ setBrowseDirection }
       />
-      <ReaderModeSelector />
       <PageNavButton previous onClick={ () => setBrowseDirection(-1) } />
       <PageNavButton next onClick={ () => setBrowseDirection(1) } />
     </Container>
@@ -67,19 +65,5 @@ export default styled(PageReaderTemplate)`
     :last-child {
       right: 0;
     }
-  }
-
-  ${ReaderModeSelector} {
-    background-color: ${getThemeColor('primary')};
-    box-shadow: 5px 5px ${getThemeColor('secondary')};
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: max(10vh, 45px);
-    width: max(15vw, 145px);
-    display: flex;
-    justify-content: space-evenly;
-    padding: 5px;
-    z-index: 33;
   }
 `;
