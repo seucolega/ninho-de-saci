@@ -3,49 +3,25 @@ import gsap from 'gsap/all';
 import styled from 'styled-components';
 
 import { Button, Main } from '../../components/atoms';
-import { usePageSelectionActionContext } from '../../context/contexts';
-import useToggle from '../../hooks/useToggle';
 
 import { getThemeColor } from '../../styles/utils';
-import { homeContent } from '../../utils/data';
-import { READER } from '../../utils/pageTypes';
 import media from '../../assets/media';
 
 const Home = ({ className }) => {
-  const setSelectedPage = usePageSelectionActionContext();
-  const [showButton, toggleShowButton] = useToggle(false);
-
-  const { buttonText } = homeContent;
   const main = useRef(null);
 
   useLayoutEffect(
-    () => {;
+    () => {
       gsap.fromTo(
         main.current,
         { autoAlpha: 0, scale: 1.2 },
-        { autoAlpha: 1, duration: 2, scale: 1, onComplete: toggleShowButton },
+        { autoAlpha: 1, duration: 2, scale: 1 },
       );
     },
     [],
   );
 
-  const goToReaderPage = () => {
-    gsap.to(
-      main.current,
-      {
-        xPercent: -100,
-        duration: 1,
-        autoAlpha: 0,
-        onComplete: () => setSelectedPage(READER),
-      },
-    );
-  };
-
-  return (
-    <Main ref={ main } className={ className }>
-      { showButton && <Button onMouseUp={ goToReaderPage }>{ buttonText }</Button> }
-    </Main>
-  );
+  return <Main ref={ main } className={ className }/>;
 };
 
 export default styled(Home)`

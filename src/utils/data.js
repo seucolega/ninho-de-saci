@@ -3,15 +3,11 @@ import media from "../assets/media";
 export const navbarContent = {
   home: 'Início',
   about: 'Sobre',
-  bookReader: 'Leia o livro digital',
+  bookReader: 'Quero Ler o Livro',
   bookPdf: {
     text: 'Livro em PDF',
     url: media.pdf,
   },
-};
-
-export const homeContent = {
-  buttonText: 'Quero ler o livro!',
 };
 
 export const aboutContent = {
